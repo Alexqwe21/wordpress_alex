@@ -15,16 +15,17 @@
 			</div>
 
 			<div class="grid-1-3 contato-item">
-				<h2>Dados</h2>
-				<p>21 2422-9999</p>
-				<p>contato@rest.com</p>
-				<p>facebook.com/rest/</p>
+				<h2><?php the_field('titulo_dados'); ?></h2>
+				<?php the_field('Texto_numero_contato'); ?>
+				<?php the_field('Texto_contato_email'); ?>
+				<?php the_field('Texto_contato_facebok'); ?>
 			</div>
 			<div class="grid-1-3 contato-item">
-				<h2>Horários</h2>
-				<p>Segunda à Sexta: 10 às 23</p>
-				<p>Sábado: 14 às 23</p>
-				<p>Domingo: 14 às 22</p>
+				<h2><?php the_field('titulo_horarios'); ?></h2>
+				
+				<?php the_field('Texto_horarios_semana'); ?>
+				<?php the_field('Texto_horarios_sabado'); ?>
+				<?php the_field('Texto_horarios_domingo'); ?>
 			</div>
 			<div class="grid-1-3 contato-item">
 				<h2>Endereço</h2>
