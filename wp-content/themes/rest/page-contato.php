@@ -11,8 +11,9 @@
 			<h2 class="subtitulo"><?php the_title(); ?></h2>
 
 			<div class="grid-16">
-				<a href="https://www.google.com.br/maps" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/rest-mapa.jpg" alt="Fachada do Rest"></a>
-			</div>
+			
+				<a href="<?php the_field('link_da_localizacao_do_negocio'); ?>" target="_blank"><img src="<?php the_field('foto_mapa'); ?>" alt="<?php the_field('foto_mapa_descricao'); ?>"></a>
+			</div> 
 
 			<div class="grid-1-3 contato-item">
 				<h2><?php the_field('titulo_dados'); ?></h2>
@@ -22,20 +23,20 @@
 			</div>
 			<div class="grid-1-3 contato-item">
 				<h2><?php the_field('titulo_horarios'); ?></h2>
-				
+
 				<?php the_field('Texto_horarios_semana'); ?>
 				<?php the_field('Texto_horarios_sabado'); ?>
 				<?php the_field('Texto_horarios_domingo'); ?>
 			</div>
 			<div class="grid-1-3 contato-item">
-				<h2>Endereço</h2>
-				<p>Rua Marechal, 29</p>
-				<p>Copacabana - Rio de Janeiro</p>
-				<p>Brasil - Terra - Via Láctea</p>
+				<h2><?php the_field('titulo_endereco'); ?></h2>
+				<?php the_field('Texto_rua'); ?>
+				<?php the_field('Texto_bairro'); ?>
+				<?php the_field('Texto_cidade'); ?>
 			</div>
 		</section>
 
-	<?php endwhile;
+<?php endwhile;
 else: endif; ?>
 
 <?php get_footer(); ?>
