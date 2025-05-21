@@ -4,6 +4,13 @@
 
 <?php get_header(); ?>
 
+
+<?php
+// $sobre = 28;
+
+$sobre =  get_page_by_title('sobre');
+the_field('foto_rest', $sobre); ?>
+
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 		<section class="container">
