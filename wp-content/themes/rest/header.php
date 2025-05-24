@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="utf-8">
-		<title><?php bloginfo('name'); ?></title>
 
-		<link href='https://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
-		<!-- head wordprees -->
-		<?php wp_head(); ?>
-		<!-- head wordprees -->
-	</head>
+<head>
+	<meta charset="utf-8">
+	<title><?php bloginfo('name'); ?>-<?php wp_title(''); ?> <?php the_field('title_seo'); ?></title>
 
-	<body>
-		
-		<header>
-			<nav>
-				<ul>
-					<li class="current_page_item"><a href="/wordpress_alex/">Menu</a></li>
-					<li><a href="/wordpress_alex/sobre/">Sobre</a></li>
-					<li><a href="/wordpress_alex/contato/">Contato</a></li>
-				</ul>
-			</nav>
+	<meta name="description" content="<?php bloginfo('name'); ?> <?php wp_title(''); ?>  <?php the_field('description_seo'); ?>">
 
-			<h1><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/rest.png" alt="Rest"></h1>
+	<link href='https://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
 
-			
-			<?php  $contato = get_page_by_title('contato'); ?>
-			<p><?php the_field ('endereco_header' , $contato);?></p>
-			<p class="telefone"><?php the_field ('telefone_header' , $contato);?></p>
-		</header>
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
+
+	<!-- head wordprees -->
+	<?php wp_head(); ?>
+	<!-- head wordprees -->
+</head>
+
+<body>
+
+	<header>
+		<nav>
+			<ul>
+				<li class="current_page_item"><a href="/wordpress_alex/">Menu</a></li>
+				<li><a href="/wordpress_alex/sobre/">Sobre</a></li>
+				<li><a href="/wordpress_alex/contato/">Contato</a></li>
+			</ul>
+		</nav>
+
+		<h1><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/rest.png" alt="Rest"></h1>
+
+		<!-- PUXANDO O CONTEUDO DE  OUTRAS PAGINAS ATRIBUINDO VARIAVEIS -->
+		<?php $contato = get_page_by_title('contato'); ?>
+		<p><?php the_field('endereco_header', $contato); ?></p>
+		<!-- PUXANDO O CONTEUDO DE  OUTRAS PAGINAS ATRIBUINDO VARIAVEIS -->
+		<?php the_field('Texto_numero_contato', $contato); ?>
+
+	</header>
