@@ -1,10 +1,12 @@
 <footer>
 	<nav class="nav-footer">
-		<ul>
-			<li class="current_page_item"><a href="/wordpress_alex/">Menu</a></li>
-			<li><a href="/wordpress_alex/sobre/">Sobre</a></li>
-			<li><a href="/wordpress_alex/contato/">Contato</a></li>
-		</ul>
+		<?php 
+		$args = array(
+			'menu' => 'principal',
+			'container' => false
+		);
+		wp_nav_menu( $args);
+		?>
 	</nav>
 
 	<p><?php bloginfo('name'); ?> <?php echo date("Y");?> Alguns direitos reservados.</p>
@@ -14,5 +16,7 @@
 <?php wp_footer(); ?>
 <!-- footer wordpress -->
 </body>
-
+Call to unknown function: 'bloginfo'
 </html>
+
+Call to unknown function: 'wp_footer'
